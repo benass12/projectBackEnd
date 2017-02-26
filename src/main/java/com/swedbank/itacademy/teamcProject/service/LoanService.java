@@ -5,6 +5,9 @@ import com.swedbank.itacademy.teamcProject.repository.LoansRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.util.Date;
+
 /**
  * Created by benas on 17.2.24.
  */
@@ -20,6 +23,24 @@ public class LoanService {
 
         return loansRepository.findAll();
     }
+
+    public  void addNewLoan(){
+
+            Loans newLoan = new Loans();
+        BigDecimal value = new BigDecimal("1115.37");
+            newLoan.setName("Andrius");
+            newLoan.setSurname("Antanavicius");
+            newLoan.setAddress("Kentukio 30");
+            newLoan.setCountry("Lietuva");
+            newLoan.setValue(value);
+//            newLoan.setDate(new Date(2016,12,25));
+            newLoan.setEmail("Antanavicius@gmail.com");
+            newLoan.setDoctype(1);
+            newLoan.setDocnumber(2);
+            newLoan.setPhone1("63587852");
+            loansRepository.save(newLoan);
+        }
+
 
 
 

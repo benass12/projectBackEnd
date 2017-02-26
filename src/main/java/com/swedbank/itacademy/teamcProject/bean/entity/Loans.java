@@ -1,5 +1,7 @@
 package com.swedbank.itacademy.teamcProject.bean.entity;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,7 +17,9 @@ public class Loans {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    @NotEmpty(message = "First name is required")
     private String name;
+    @NotEmpty(message = "Last name is required")
     private String surname;
     private BigDecimal value;
     private Integer paymentday;
@@ -33,6 +37,8 @@ public class Loans {
     private Integer docnumber;
     private String address;
     private Integer doctype;
+
+
 
     public Integer getId() {
         return id;

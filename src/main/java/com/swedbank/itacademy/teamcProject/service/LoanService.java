@@ -26,20 +26,29 @@ public class LoanService {
 
     public  void addNewLoan(){
 
-            Loans newLoan = new Loans();
+        Loans newLoan = new Loans();
         BigDecimal value = new BigDecimal("1115.37");
-            newLoan.setName("Andrius");
-            newLoan.setSurname("Antanavicius");
-            newLoan.setAddress("Kentukio 30");
-            newLoan.setCountry("Lietuva");
-            newLoan.setValue(value);
+        newLoan.setName("Andrius");
+        newLoan.setSurname("Antanavicius");
+        newLoan.setAddress("Kentukio 30");
+        newLoan.setCountry("Lietuva");
+        newLoan.setValue(value);
 //            newLoan.setDate(new Date(2016,12,25));
-            newLoan.setEmail("Antanavicius@gmail.com");
-            newLoan.setDoctype(1);
-            newLoan.setDocnumber(2);
-            newLoan.setPhone1("63587852");
-            loansRepository.save(newLoan);
-        }
+        newLoan.setEmail("Antanavicius@gmail.com");
+        newLoan.setDoctype(1);
+        newLoan.setDocnumber(2);
+        newLoan.setPhone1("63587852");
+        loansRepository.save(newLoan);
+    }
+
+    public void addLoans(Loans loans){
+        loansRepository.save(loans);
+
+
+    }
+
+
+
 
 
 

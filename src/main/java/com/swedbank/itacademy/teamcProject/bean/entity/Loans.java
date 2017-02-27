@@ -38,7 +38,30 @@ public class Loans {
     private String address;
     private Integer doctype;
 
+    public Loans(String name, String surname, BigDecimal value, Integer paymentday, Date termdate, String email, Integer personalid, String country, String city, String phone1, String phone2, Integer status, Date date, String salarywithtaxes, String loancode, Integer docnumber, String address, Integer doctype) {
+        this.name = name;
+        this.surname = surname;
+        this.value = value;
+        this.paymentday = paymentday;
+        this.termdate = termdate;
+        this.email = email;
+        this.personalid = personalid;
+        this.country = country;
+        this.city = city;
+        this.phone1 = phone1;
+        this.phone2 = phone2;
+        this.status = status;
+        this.date = date;
+        this.salarywithtaxes = salarywithtaxes;
+        this.loancode = loancode;
+        this.docnumber = docnumber;
+        this.address = address;
+        this.doctype = doctype;
+    }
 
+    public Loans() {
+
+    }
 
     public Integer getId() {
         return id;

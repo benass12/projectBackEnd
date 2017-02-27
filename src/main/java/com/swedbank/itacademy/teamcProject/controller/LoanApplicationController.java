@@ -4,15 +4,12 @@ import com.swedbank.itacademy.teamcProject.bean.entity.Loans;
 import com.swedbank.itacademy.teamcProject.repository.LoansRepository;
 import com.swedbank.itacademy.teamcProject.service.LoanService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by benas on 17.2.24.
  */
-
+@CrossOrigin(value = "https://localhost:17469")
 @RestController
 public class LoanApplicationController {
 
@@ -32,8 +29,14 @@ public class LoanApplicationController {
     @RequestMapping(value = "/loans/new", method = RequestMethod.POST)
 
     public void tes2() {
-         loansService.addNewLoan();
+        loansService.addNewLoan();
     }
 
-}
+//    @RequestMapping(value = "/loans/new", method = RequestMethod.POST)
+//
+//    public void tes2() {
+//        loansService.addNewLoan();
+//    }
 
+
+}

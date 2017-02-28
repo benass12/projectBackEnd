@@ -10,7 +10,7 @@ import javax.validation.Valid;
 /**
  * Created by benas on 17.2.24.
  */
-@CrossOrigin(origins = "https://frozen-hamlet-97469.herokuapp.com", maxAge = 3600)
+@CrossOrigin(origins = "https://frozen-hamlet-97469.herokuapp.com", maxAge = 3600) 
 @RestController
 public class LoanApplicationController {
 
@@ -19,12 +19,10 @@ public class LoanApplicationController {
     private LoanService loansService;
 
 
-
     @RequestMapping(value = "/loans", method = RequestMethod.GET)
     public Iterable<Loans> test() {
         return loansService.getLoans();
     }
-
 
 
     @RequestMapping(value = "/loans/new", method = RequestMethod.POST)

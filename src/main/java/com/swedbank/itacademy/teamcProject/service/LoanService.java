@@ -53,7 +53,7 @@ public class LoanService {
 
 
     public void addLoans(Loans loans){
-        
+
         loansRepository.save(loans);
 
 
@@ -68,8 +68,10 @@ public class LoanService {
             adminRepository.save(newAdmin);
         }
 
-        public Loans getLoanById(Integer id ){
-            return loansRepository.findOne(id);
+        public Loans getLoanById(Loans loans){
+           Loans temp = loansRepository.findOne(loans.getId());
+           temp.setStatus(loans.getStatus());
+           return temp;
         }
 
 

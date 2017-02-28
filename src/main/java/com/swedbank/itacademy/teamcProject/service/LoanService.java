@@ -53,6 +53,7 @@ public class LoanService {
 
 
     public void addLoans(Loans loans){
+        
         loansRepository.save(loans);
 
 

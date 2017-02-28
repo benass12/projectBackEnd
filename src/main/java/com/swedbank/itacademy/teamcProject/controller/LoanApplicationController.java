@@ -29,6 +29,12 @@ public class LoanApplicationController {
         return loansService.getAdmin();
     }
 
+    @RequestMapping(value = "/admin", method = RequestMethod.POST)
+    public Admin testAdmin1(String username, String password) {
+
+        return new Admin(username, password,"labas");
+    }
+
     @RequestMapping(value = "/admin/new", method = RequestMethod.POST)
 
     public void addAdmin() {

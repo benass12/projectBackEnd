@@ -24,10 +24,10 @@ public class LoanApplicationController {
         return loansService.getLoans();
     }
 
-    @RequestMapping(value = "/admin", method = RequestMethod.GET)
-    public Iterable<Admin> testAdmin() {
-        return loansService.getAdmin();
-    }
+//    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+//    public Iterable<Admin> testAdmin() {
+//        return loansService.getAdmin();
+//    }
 
     @RequestMapping(value = "/admin", method = RequestMethod.POST)
     public Admin testAdmin1(String username, String password) {

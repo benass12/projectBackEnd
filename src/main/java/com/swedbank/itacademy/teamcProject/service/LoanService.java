@@ -67,6 +67,10 @@ public class LoanService {
             adminRepository.save(newAdmin);
         }
 
+        public Loans getLoanById(Integer id ){
+            return loansRepository.findOne(id);
+        }
+
 
 
 

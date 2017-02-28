@@ -56,7 +56,7 @@ public class LoanApplicationController {
 
     @RequestMapping(value = "loan/edit", method = RequestMethod.POST)
 
-    public Loans editLoan(Integer id, Integer status){
+    public Loans editLoan(int id, int status){
         Loans loans  = loansService.getLoanById(id);
         if(status>=1){
             loans.setStatus(1);

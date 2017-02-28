@@ -1,5 +1,6 @@
 package com.swedbank.itacademy.teamcProject.controller;
 
+import com.swedbank.itacademy.teamcProject.bean.entity.Admin;
 import com.swedbank.itacademy.teamcProject.bean.entity.Loans;
 import com.swedbank.itacademy.teamcProject.service.LoanService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,17 @@ public class LoanApplicationController {
         return loansService.getLoans();
     }
 
+    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    public Iterable<Admin> testAdmin() {
+        return loansService.getAdmin();
+    }
+
+    @RequestMapping(value = "/admin/new", method = RequestMethod.POST)
+
+    public void addAdmin() {
+        loansService.addAdmin();
+    }
+
     @RequestMapping(value = "/loans/new", method = RequestMethod.POST)
 
     public void tes2() {
@@ -35,6 +47,10 @@ public class LoanApplicationController {
 
         loansService.addLoans(loans);
     }
+
+
+
+
 
 
 

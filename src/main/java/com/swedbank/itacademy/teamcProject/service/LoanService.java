@@ -1,11 +1,14 @@
 package com.swedbank.itacademy.teamcProject.service;
 
+import com.swedbank.itacademy.teamcProject.bean.entity.Admin;
 import com.swedbank.itacademy.teamcProject.bean.entity.Loans;
+import com.swedbank.itacademy.teamcProject.repository.AdminRepository;
 import com.swedbank.itacademy.teamcProject.repository.LoansRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.nio.file.AccessDeniedException;
 import java.util.Date;
 
 /**
@@ -17,11 +20,18 @@ public class LoanService {
 
     @Autowired
     private LoansRepository loansRepository;
+    @Autowired
+    AdminRepository adminRepository;
 
 
     public Iterable<Loans> getLoans() {
 
         return loansRepository.findAll();
+    }
+
+    public Iterable<Admin> getAdmin() {
+
+        return adminRepository.findAll();
     }
 
     public  void addNewLoan(){
@@ -41,13 +51,21 @@ public class LoanService {
         loansRepository.save(newLoan);
     }
 
+
     public void addLoans(Loans loans){
         loansRepository.save(loans);
 
 
     }
 
-
+        public void addAdmin(){
+            Admin newAdmin = new Admin();
+            newAdmin.setId(1);
+            newAdmin.setUsername("root");
+            newAdmin.setPassword("root");
+            newAdmin.setToken("labas");
+            adminRepository.save(newAdmin);
+        }
 
 
 

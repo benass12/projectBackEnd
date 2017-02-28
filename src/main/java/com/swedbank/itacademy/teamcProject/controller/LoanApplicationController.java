@@ -10,7 +10,7 @@ import javax.validation.Valid;
 /**
  * Created by benas on 17.2.24.
  */
-
+@CrossOrigin(origins = "https://frozen-hamlet-97469.herokuapp.com", maxAge = 3600)
 @RestController
 public class LoanApplicationController {
 

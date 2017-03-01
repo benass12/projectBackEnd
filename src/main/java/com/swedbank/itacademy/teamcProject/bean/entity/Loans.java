@@ -69,7 +69,7 @@ public class Loans {
     {
         MessageDigest md5 = null;
         try {
-            md5 = MessageDigest.getInstance("SHA256");
+            md5 = MessageDigest.getInstance("SHA-256");
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
             this.setLoancode("fail");

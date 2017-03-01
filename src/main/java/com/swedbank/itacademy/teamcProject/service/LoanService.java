@@ -77,5 +77,14 @@ public class LoanService {
         return temp;
     }
 
+    public void deleteLoan(Loans loans){
+
+
+        loansRepository.findOne(loans.getId());
+        loansRepository.delete(loans);
+
+
+    }
+
 
 }

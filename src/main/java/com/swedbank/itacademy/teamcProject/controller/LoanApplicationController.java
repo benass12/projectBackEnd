@@ -73,5 +73,16 @@ public class LoanApplicationController {
         return loansService.updateStatus(loans);
     }
 
+    @RequestMapping(value = "loan/delete", method = RequestMethod.DELETE)
+         public void deleteLoans() {
 
-}
+        Loans loans = new Loans();
+
+            loansService.deleteLoan(loans);
+
+        }
+
+    }
+
+
+

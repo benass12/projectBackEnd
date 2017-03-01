@@ -55,7 +55,7 @@ public class LoanService {
     public void addLoans(Loans loans) {
 
         //place to set default status
-        loans.setStatus("Unverified");
+//        loans.setStatus("Unverified");
 
         loansRepository.save(loans);
 

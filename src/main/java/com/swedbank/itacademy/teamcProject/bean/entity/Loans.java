@@ -31,7 +31,7 @@ public class Loans {
     private String city;
     private String phone1;
     private String phone2;
-    private Integer status;
+    private String status;
     private String date;
     private Integer salarywithtaxes;
     private String loancode;
@@ -40,7 +40,7 @@ public class Loans {
     private String doctype;
 
 
-    public Loans(String name, String surname, BigDecimal value, Integer paymentday, String termdate, String email, Integer personalid, String country, String city, String phone1, String phone2, Integer status, String date, Integer salarywithtaxes, String loancode, Integer docnumber, String address, String doctype) {
+    public Loans(String name, String surname, BigDecimal value, Integer paymentday, String termdate, String email, Integer personalid, String country, String city, String phone1, String phone2, String status, String date, Integer salarywithtaxes, String loancode, Integer docnumber, String address, String doctype) {
         this.name = name;
         this.surname = surname;
         this.value = value;
@@ -161,11 +161,11 @@ public class Loans {
         this.phone2 = phone2;
     }
 
-    public Integer getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

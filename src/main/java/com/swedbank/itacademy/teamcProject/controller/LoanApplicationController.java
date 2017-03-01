@@ -57,21 +57,21 @@ public class LoanApplicationController {
         loansService.addLoans(loans);
     }
 
-    @RequestMapping(value = "loan/edit", method = RequestMethod.POST)
-
-    public Loans editLoan(@Valid @RequestBody Loans loans) {
-
-
-        if (loans.getStatus() >= 1) {
-            loans.setStatus(1);
-        } else if (loans.getStatus() == 0) {
-            loans.setStatus(0);
-
-        } else if (loans.getStatus() < 0) {
-            loans.setStatus(-1);
-        }
-        return loansService.updateStatus(loans);
-    }
+//    @RequestMapping(value = "loan/edit", method = RequestMethod.POST)
+//
+//    public Loans editLoan(@Valid @RequestBody Loans loans) {
+//
+//
+//        if (loans.getStatus() >= 1) {
+//            loans.setStatus(1);
+//        } else if (loans.getStatus() == 0) {
+//            loans.setStatus(0);
+//
+//        } else if (loans.getStatus() < 0) {
+//            loans.setStatus(-1);
+//        }
+//        return loansService.updateStatus(loans);
+//    }
 
     @RequestMapping(value = "loan/delete/{id}", method = RequestMethod.DELETE)
          public void deleteLoans() {

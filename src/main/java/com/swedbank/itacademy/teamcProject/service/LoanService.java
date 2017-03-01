@@ -7,8 +7,9 @@ import com.swedbank.itacademy.teamcProject.repository.LoansRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Array;
 import java.math.BigDecimal;
-
+import java.util.*;
 
 
 /**
@@ -53,8 +54,8 @@ public class LoanService {
 
 
     public void addLoans(Loans loans) {
-        loans.setHash();
         loansRepository.save(loans);
+        loans.setHash();
     }
 
     public void addAdmin() {
@@ -72,6 +73,12 @@ public class LoanService {
         temp.setStatus(loans.getStatus());
         return temp;
     }
+
+    public Loans getLoanByHash(String hash)
+    {
+       return loansRepository.findByLoancode(hash);
+    }
+
 
 
 }

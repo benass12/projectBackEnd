@@ -1,6 +1,8 @@
 package com.swedbank.itacademy.teamcProject.bean.entity;
 
+import org.hibernate.annotations.NamedQuery;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.data.jpa.repository.Query;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -233,5 +235,10 @@ public class Loans {
 
     public void setDoctype(String doctype) {
         this.doctype = doctype;
+    }
+
+    @Override
+    public String toString() {
+        return loancode;
     }
 }

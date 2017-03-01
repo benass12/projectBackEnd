@@ -79,10 +79,8 @@ public class LoanApplicationController {
     }
 
     @RequestMapping(value = "loan/admin/{hash}", method = RequestMethod.GET)
-         public void getLoanByHash(@PathVariable Integer hash) {
-
-
-
+         public Loans getLoanByHash(@PathVariable Integer hash) {
+            return getLoanByHash(hash);
         }
 
     }

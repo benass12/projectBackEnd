@@ -69,11 +69,12 @@ public class Loans {
     {
         MessageDigest md5 = null;
         try {
-            md5 = MessageDigest.getInstance("SHA1PRNG");
+            md5 = MessageDigest.getInstance("SHA256");
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
+            this.setLoancode("fail");
         }
-        md5.update(StandardCharsets.UTF_8.encode(this.getId().toString()));
+        md5.update(StandardCharsets.UTF_8.encode(String.valueOf(this.getId())));
         this.setLoancode(String.format("%032x", new BigInteger(1, md5.digest())));
     }
 

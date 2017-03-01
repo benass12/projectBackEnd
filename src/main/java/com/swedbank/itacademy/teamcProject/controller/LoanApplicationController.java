@@ -67,12 +67,12 @@ public class LoanApplicationController {
 
 
         if (loans.getStatus().equals(str1))  {
-            loans.setStatus("Approved");
+            loans.setStatus(str1);
         } else if (loans.getStatus().equals(str2)) {
-            loans.setStatus("Disapproved");
+            loans.setStatus(str2);
 
         } else if (loans.getStatus().equals(str3)) {
-            loans.setStatus("Unverified");
+            loans.setStatus(str3);
         }
         return loansService.updateStatus(loans);
     }

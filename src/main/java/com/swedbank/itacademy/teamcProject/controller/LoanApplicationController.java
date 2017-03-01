@@ -39,16 +39,18 @@ public class LoanApplicationController {
     }
 
     @RequestMapping(value = "/admin/new", method = RequestMethod.POST)
-
     public void addAdmin() {
         loansService.addAdmin();
     }
 
-    @RequestMapping(value = "/loans/new", method = RequestMethod.POST)
 
+
+    @RequestMapping(value = "/loans/new", method = RequestMethod.POST)
     public void tes2() {
         loansService.addNewLoan();
     }
+
+
 
     @RequestMapping(value = "/loans/all", method = RequestMethod.POST)
     @ResponseBody

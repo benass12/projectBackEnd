@@ -55,7 +55,8 @@ public class LoanService {
 
     public void addLoans(Loans loans) {
         loansRepository.save(loans);
-        loansRepository.findOne(loans.getId()).setHash();
+        Loans temp = loansRepository.findOne(loans.getId());
+        temp.setHash();
     }
 
     public void addAdmin() {

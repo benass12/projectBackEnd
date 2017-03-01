@@ -54,6 +54,8 @@ public class LoanService {
 
     public void addLoans(Loans loans) {
 
+        loans.setStatus(0);
+
         loansRepository.save(loans);
 
 
@@ -69,7 +71,7 @@ public class LoanService {
     }
 
 
-    public Loans getLoanById(Loans loans) {
+    public Loans updateStatus(Loans loans) {
         Loans temp = loansRepository.findOne(loans.getId());
         temp.setStatus(loans.getStatus());
         return temp;

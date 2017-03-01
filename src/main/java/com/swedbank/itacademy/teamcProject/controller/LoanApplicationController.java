@@ -70,7 +70,7 @@ public class LoanApplicationController {
         } else if (loans.getStatus() < 0) {
             loans.setStatus(-1);
         }
-        return loansService.getLoanById(loans);
+        return loansService.updateStatus(loans);
     }
 
 

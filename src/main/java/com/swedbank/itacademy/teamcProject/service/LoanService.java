@@ -54,7 +54,7 @@ public class LoanService {
 
     public void addLoans(Loans loans) {
 
-       loans.setStatus("Nepatikrinta");
+       loans.setStatus("Unverified");
 
         loansRepository.save(loans);
 

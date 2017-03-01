@@ -23,6 +23,7 @@ public class LoanApplicationController {
 
     @RequestMapping(value = "/loans", method = RequestMethod.GET)
     public Iterable<Loans> test() {
+
         return loansService.getLoans();
     }
 
@@ -53,7 +54,7 @@ public class LoanApplicationController {
     @ResponseBody
     public void tes3(@Valid @RequestBody Loans loans) {
 
-
+        loans.setStatus("Unverified");
         loansService.addLoans(loans);
     }
 

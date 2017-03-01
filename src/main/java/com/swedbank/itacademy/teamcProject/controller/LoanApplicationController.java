@@ -50,7 +50,7 @@ public class LoanApplicationController {
     }
 
     @RequestMapping(value = "/loans/all", method = RequestMethod.POST)
-
+    @ResponseBody
     public void tes3(@Valid @RequestBody Loans loans) {
 
 

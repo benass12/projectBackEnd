@@ -74,19 +74,14 @@ public class LoanService {
         return temp;
     }
 
-    public Loans getLoanByHash(String hash)
-    {
-       long count = loansRepository.count();
+    public Loans getLoanByHash(String hash) {
+        long count = loansRepository.count();
 
-       for (int i = 0; i<count ; i++)
-        {
-            if(loansRepository.exists(i) && loansRepository.findOne(i).getLoancode().equals(hash))
-            {
+        for (int i = 0; i < count; i++) {
+            if (loansRepository.exists(i) && loansRepository.findOne(i).getLoancode().equals(hash)) {
                 return loansRepository.findOne(i);
             }
+        }
         return null;
     }
-
-
-
 }

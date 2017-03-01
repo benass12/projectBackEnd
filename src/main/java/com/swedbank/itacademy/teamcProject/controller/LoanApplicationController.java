@@ -34,8 +34,12 @@ public class LoanApplicationController {
 
     @RequestMapping(value = "/admin", method = RequestMethod.POST)
     public Admin testAdmin1(Admin admin) {
-        admin.setToken("labas");
-        return admin;
+        if(admin.getUsername()== "root" && admin.getPassword()=="root")
+        {
+            admin.setToken("labas");
+            return admin;
+        }
+        return null;
     }
 
     @RequestMapping(value = "/admin/new", method = RequestMethod.POST)

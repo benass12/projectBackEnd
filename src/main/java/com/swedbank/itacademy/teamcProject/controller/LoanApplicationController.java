@@ -12,6 +12,7 @@ import javax.validation.Valid;
 /**
  * Created by benas on 17.2.24.
  */
+@CrossOrigin(value = "*", maxAge = 3600)
 
 @RestController
 public class LoanApplicationController {

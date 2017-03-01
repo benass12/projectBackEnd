@@ -55,7 +55,7 @@ public class LoanApplicationController {
     public void tes3(@Valid @RequestBody Loans loans) {
 
         loans.setStatus("Unverified");
-        loans.setHash();
+      //  loans.setHash();
         loansService.addLoans(loans);
     }
 
@@ -79,8 +79,9 @@ public class LoanApplicationController {
         return loansService.updateStatus(loans);
     }
 
-    @RequestMapping(value = "loan/admin/{hash}", method = RequestMethod.POST)
-         public void deleteLoans(@PathVariable String hash) {
+    @RequestMapping(value = "loan/admin/{hash}", method = RequestMethod.GET)
+         public void getLoanByHash(@PathVariable Integer hash) {
+
 
 
         }

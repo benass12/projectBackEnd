@@ -80,7 +80,7 @@ public class LoanApplicationController {
 
     @RequestMapping(value = "loan/admin/{hash}", method = RequestMethod.GET)
          public Loans getLoanByHash(@PathVariable String hash) {
-            return getLoanByHash(hash);
+            return loansService.getLoanByHash(hash);
         }
 
     }

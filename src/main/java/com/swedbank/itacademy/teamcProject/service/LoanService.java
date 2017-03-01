@@ -80,11 +80,10 @@ public class LoanService {
 
        for (int i = 0; i<count ; i++)
         {
-            if(loansRepository.findOne(i).getLoancode().equals(hash))
+            if(loansRepository.exists(i) && loansRepository.findOne(i).getLoancode().equals(hash))
             {
                 return loansRepository.findOne(i);
             }
-        }
         return null;
     }
 

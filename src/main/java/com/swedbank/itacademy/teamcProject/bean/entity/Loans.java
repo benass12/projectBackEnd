@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigDecimal;
+import java.security.MessageDigest;
 import java.util.Date;
 
 /**
@@ -23,7 +24,7 @@ public class Loans {
     private String surname;
     private BigDecimal value;
     private Integer paymentday;
-    private Date termdate;
+    private String termdate;
     private String email;
     private Integer personalid;
     private String country;
@@ -31,14 +32,15 @@ public class Loans {
     private String phone1;
     private String phone2;
     private Integer status;
-    private Date date;
-    private String salarywithtaxes;
+    private String date;
+    private Integer salarywithtaxes;
     private String loancode;
     private Integer docnumber;
     private String address;
-    private Integer doctype;
+    private String doctype;
 
-    public Loans(String name, String surname, BigDecimal value, Integer paymentday, Date termdate, String email, Integer personalid, String country, String city, String phone1, String phone2, Integer status, Date date, String salarywithtaxes, String loancode, Integer docnumber, String address, Integer doctype) {
+
+    public Loans(String name, String surname, BigDecimal value, Integer paymentday, String termdate, String email, Integer personalid, String country, String city, String phone1, String phone2, Integer status, String date, Integer salarywithtaxes, String loancode, Integer docnumber, String address, String doctype) {
         this.name = name;
         this.surname = surname;
         this.value = value;
@@ -57,10 +59,10 @@ public class Loans {
         this.docnumber = docnumber;
         this.address = address;
         this.doctype = doctype;
+
     }
 
     public Loans() {
-
     }
 
     public Integer getId() {
@@ -103,12 +105,12 @@ public class Loans {
         this.paymentday = paymentday;
     }
 
-    public Date getTermdate() {
+    public String getTermdate() {
         return termdate;
     }
 
-    public void setTermdate(Date termDate) {
-        this.termdate = termDate;
+    public void setTermdate(String termdate) {
+        this.termdate = termdate;
     }
 
     public String getEmail() {
@@ -167,19 +169,19 @@ public class Loans {
         this.status = status;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public String getSalarywithtaxes() {
+    public Integer getSalarywithtaxes() {
         return salarywithtaxes;
     }
 
-    public void setSalarywithtaxes(String salarywithtaxes) {
+    public void setSalarywithtaxes(Integer salarywithtaxes) {
         this.salarywithtaxes = salarywithtaxes;
     }
 
@@ -207,11 +209,11 @@ public class Loans {
         this.address = address;
     }
 
-    public Integer getDoctype() {
+    public String getDoctype() {
         return doctype;
     }
 
-    public void setDoctype(Integer doctype) {
+    public void setDoctype(String doctype) {
         this.doctype = doctype;
     }
 }

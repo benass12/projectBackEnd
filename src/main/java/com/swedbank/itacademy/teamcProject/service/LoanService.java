@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.nio.file.AccessDeniedException;
-import java.util.Date;
+
+
 
 /**
  * Created by benas on 17.2.24.
@@ -21,7 +21,7 @@ public class LoanService {
     @Autowired
     private LoansRepository loansRepository;
     @Autowired
-    AdminRepository adminRepository;
+    private AdminRepository adminRepository;
 
 
     public Iterable<Loans> getLoans() {
@@ -34,7 +34,7 @@ public class LoanService {
         return adminRepository.findAll();
     }
 
-    public  void addNewLoan(){
+    public void addNewLoan() {
 
         Loans newLoan = new Loans();
         BigDecimal value = new BigDecimal("1115.37");
@@ -45,37 +45,35 @@ public class LoanService {
         newLoan.setValue(value);
 //            newLoan.setDate(new Date(2016,12,25));
         newLoan.setEmail("Antanavicius@gmail.com");
-        newLoan.setDoctype(1);
+        newLoan.setDoctype("pasas");
         newLoan.setDocnumber(2);
         newLoan.setPhone1("63587852");
         loansRepository.save(newLoan);
     }
 
 
-    public void addLoans(Loans loans){
+    public void addLoans(Loans loans) {
 
         loansRepository.save(loans);
 
 
     }
 
-        public void addAdmin(){
-            Admin newAdmin = new Admin();
-            newAdmin.setId(1);
-            newAdmin.setUsername("root");
-            newAdmin.setPassword("root");
-            newAdmin.setToken("labas");
-            adminRepository.save(newAdmin);
-        }
-
-        public Loans getLoanById(Loans loans){
-           Loans temp = loansRepository.findOne(loans.getId());
-           temp.setStatus(loans.getStatus());
-           return temp;
-        }
+    public void addAdmin() {
+        Admin newAdmin = new Admin();
+        newAdmin.setId(1);
+        newAdmin.setUsername("root");
+        newAdmin.setPassword("root");
+        newAdmin.setToken("labas");
+        adminRepository.save(newAdmin);
+    }
 
 
-
+    public Loans getLoanById(Loans loans) {
+        Loans temp = loansRepository.findOne(loans.getId());
+        temp.setStatus(loans.getStatus());
+        return temp;
+    }
 
 
 }

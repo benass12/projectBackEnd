@@ -76,7 +76,16 @@ public class LoanService {
 
     public Loans getLoanByHash(String hash)
     {
-       return loansRepository.findByLoancode(hash);
+       long count = loansRepository.count();
+
+       for (int i = 0; i<count ; i++)
+        {
+            if(loansRepository.findOne(i).getLoancode() == hash)
+            {
+                return loansRepository.findOne(i);
+            }
+        }
+        return null;
     }
 
 

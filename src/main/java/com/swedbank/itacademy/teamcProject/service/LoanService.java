@@ -55,7 +55,7 @@ public class LoanService {
 
     public void addLoans(Loans loans) {
         loansRepository.save(loans);
-        loans.setHash();
+        loansRepository.findOne(loans.getId()).setHash();
     }
 
     public void addAdmin() {
@@ -79,7 +79,8 @@ public class LoanService {
 
         for (int i = 0; i < count; i++) {
             if (loansRepository.exists(i) && loansRepository.findOne(i).getLoancode().equals(hash)) {
-                return loansRepository.findOne(i);
+                Loans temp = loansRepository.findOne(i);
+                return temp;
             }
         }
         return null;

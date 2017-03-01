@@ -7,8 +7,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigDecimal;
-import java.security.MessageDigest;
-import java.util.Date;
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.*;
 
 /**
  * Created by benas on 17.2.24.
@@ -61,6 +62,21 @@ public class Loans {
         this.doctype = doctype;
 
     }
+
+
+
+    public void setHash()
+    {
+        MessageDigest md5 = null;
+        try {
+            md5 = MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        md5.update(StandardCharsets.UTF_8.encode(this.getId().toString()));
+        this.setLoancode(String.format("%032x", new BigInteger(1, md5.digest())));
+    }
+
 
     public Loans() {
     }

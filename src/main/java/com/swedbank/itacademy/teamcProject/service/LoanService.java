@@ -54,11 +54,9 @@ public class LoanService {
 
     public void addLoans(Loans loans) {
 
-        //place to set default status
-
-
         loansRepository.save(loans);
-
+        Loans temp = loansRepository.findOne(loans.getId());
+        temp.setHash();
 
     }
 
@@ -76,15 +74,6 @@ public class LoanService {
         Loans temp = loansRepository.findOne(loans.getId());
         temp.setStatus(loans.getStatus());
         return temp;
-    }
-
-    public void deleteLoan(Loans loans){
-
-
-        loansRepository.findOne(loans.getId());
-       loansRepository.delete(loans);
-
-
     }
 
 

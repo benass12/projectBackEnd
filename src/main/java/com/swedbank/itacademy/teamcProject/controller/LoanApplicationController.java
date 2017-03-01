@@ -78,13 +78,9 @@ public class LoanApplicationController {
         return loansService.updateStatus(loans);
     }
 
-    @RequestMapping(value = "loan/delete/{id}", method = RequestMethod.POST)
-         public void deleteLoans(@PathVariable Loans loans) {
-
-
-
-             loansService.deleteLoan(loans);
-
+    @RequestMapping(value = "loan/admin/{hash}", method = RequestMethod.POST)
+         public void deleteLoans(@PathVariable String hash) {
+        
         }
 
     }

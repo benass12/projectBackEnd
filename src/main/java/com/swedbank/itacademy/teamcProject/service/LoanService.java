@@ -82,7 +82,7 @@ public class LoanService {
 
 
         loansRepository.findOne(loans.getId());
-        loansRepository.delete(loans);
+       loansRepository.delete(loans);
 
 
     }

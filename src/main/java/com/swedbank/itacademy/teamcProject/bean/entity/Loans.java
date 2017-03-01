@@ -73,6 +73,7 @@ public class Loans {
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
             this.setLoancode("fail");
+            return;
         }
         md5.update(StandardCharsets.UTF_8.encode(String.valueOf(this.getId())));
         this.setLoancode(String.format("%032x", new BigInteger(1, md5.digest())));

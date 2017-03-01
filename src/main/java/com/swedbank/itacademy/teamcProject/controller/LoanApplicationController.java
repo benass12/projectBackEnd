@@ -55,7 +55,6 @@ public class LoanApplicationController {
     public void tes3(@Valid @RequestBody Loans loans) {
 
         loans.setStatus("Unverified");
-      //  loans.setHash();
         loansService.addLoans(loans);
     }
 

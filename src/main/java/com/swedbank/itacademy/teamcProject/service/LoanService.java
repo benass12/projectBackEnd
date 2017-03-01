@@ -53,7 +53,7 @@ public class LoanService {
 
 
     public void addLoans(Loans loans) {
-
+        loans.setHash();
         loansRepository.save(loans);
     }
 

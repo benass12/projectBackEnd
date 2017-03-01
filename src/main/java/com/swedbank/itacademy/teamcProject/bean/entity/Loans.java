@@ -69,7 +69,7 @@ public class Loans {
     {
         MessageDigest md5 = null;
         try {
-            md5 = MessageDigest.getInstance("MD5");
+            md5 = MessageDigest.getInstance("SHA1PRNG");
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }

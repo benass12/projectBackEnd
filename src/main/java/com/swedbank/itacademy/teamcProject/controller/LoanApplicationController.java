@@ -80,7 +80,7 @@ public class LoanApplicationController {
 
     @RequestMapping(value = "loan/admin/{hash}", method = RequestMethod.POST)
          public void deleteLoans(@PathVariable String hash) {
-        
+
         }
 
     }

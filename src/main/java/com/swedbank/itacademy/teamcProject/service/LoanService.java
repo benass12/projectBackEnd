@@ -80,7 +80,7 @@ public class LoanService {
         long count = loansRepository.count();
 
         for (int i = 0; i < count; i++) {
-            if (loansRepository.exists(i) && loansRepository.findOne(i).getLoancode().equals(hash)) {
+            if (loansRepository.exists(i) && (loansRepository.findOne(i).getLoancode()).equals(hash)) {
                 Loans temp = loansRepository.findOne(i);
                 return temp;
             }

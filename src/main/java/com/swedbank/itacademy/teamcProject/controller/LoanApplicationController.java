@@ -78,8 +78,8 @@ public class LoanApplicationController {
         return loansService.updateStatus(loans);
     }
 
-    @RequestMapping(value = "loan/admin/{hash}", method = RequestMethod.GET)
-         public Loans getLoanByHash(@PathVariable String hash) {
+    @RequestMapping(value = "/admin/{hash}", method = RequestMethod.GET)
+         public @ResponseBody Loans getLoanByHash(@PathVariable String hash) {
             return loansService.getLoanByHash(hash);
         }
 

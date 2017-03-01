@@ -76,7 +76,7 @@ public class LoanService {
 
     public Loans getLoanByHash(String hash)
     {
-       return loansRepository.findByLoancode(hash);
+       return loansRepository.findOne(hash);
     }
 
 

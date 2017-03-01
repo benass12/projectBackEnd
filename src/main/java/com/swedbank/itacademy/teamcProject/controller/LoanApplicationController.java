@@ -79,9 +79,9 @@ public class LoanApplicationController {
     }
 
     @RequestMapping(value = "loan/delete/{id}", method = RequestMethod.DELETE)
-         public void deleteLoans() {
+         public void deleteLoans(@PathVariable Loans loans) {
 
-        Loans loans = new Loans();
+        
 
             loansService.deleteLoan(loans);
 

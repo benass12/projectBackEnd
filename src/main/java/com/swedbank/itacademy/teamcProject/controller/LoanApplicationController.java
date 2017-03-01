@@ -27,9 +27,14 @@ public class LoanApplicationController {
         return loansService.getLoans();
     }
 
+    @RequestMapping(value = "/admin/get", method = RequestMethod.GET)
+    public Iterable<Admin> testAdmin() {
+        return loansService.getAdmin();
+    }
+
     @RequestMapping(value = "/admin", method = RequestMethod.POST)
     public Admin testAdmin1(Admin admin) {
-        if(admin.getUsername()== "root" && admin.getPassword()=="root")
+        if(admin.getPassword().equals("root") && admin.getUsername().equals("root"))
         {
             admin.setToken("labas");
             return admin;

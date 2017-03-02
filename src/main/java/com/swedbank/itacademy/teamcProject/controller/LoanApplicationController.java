@@ -34,7 +34,7 @@ public class LoanApplicationController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
-    public Admin testAdmin1(Admin admin) {
+    public Admin testAdmin1(@Valid @RequestBody Admin admin) {
         if(loansService.checkAdmin(admin)) {
             return admin;
         }

@@ -64,7 +64,7 @@ public class LoanApplicationController {
     }
 
     @RequestMapping(value = "loan/edit", method = RequestMethod.POST)
-
+    @ResponseBody
     public Loans editLoan(@Valid @RequestBody Loans loans) {
 
         String str1 = "Approved";

@@ -38,20 +38,6 @@ public class LoanApplicationController {
         return admin;
     }
 
-    @RequestMapping(value = "/admin/new", method = RequestMethod.POST)
-    public void addAdmin() {
-        loansService.addAdmin();
-    }
-
-
-
-    @RequestMapping(value = "/loans/new", method = RequestMethod.POST)
-    public void tes2() {
-        loansService.addNewLoan();
-    }
-
-
-
     @RequestMapping(value = "/loans/all", method = RequestMethod.POST)
     public void tes3(@Valid @RequestBody Loans loans) {
 
@@ -66,7 +52,6 @@ public class LoanApplicationController {
         String str2 = "Disapproved";
         String str3 = "Unverified";
 
-
         if (loans.getStatus().equals(str1))  {
             loans.setStatus(str1);
         } else if (loans.getStatus().equals(str2)) {
@@ -78,10 +63,26 @@ public class LoanApplicationController {
         return loansService.updateStatus(loans);
     }
 
+
     @RequestMapping(value = "/view/{hash}", method = RequestMethod.GET)
-         public Loans getLoanByHash(@PathVariable String hash) {
-            return loansService.getLoanByHash(hash);
-        }
+    public @ResponseBody Loans getLoanByHash(@PathVariable String hash) {
+        return loansService.getLoanByHash(hash);
+    }
+
+//    @RequestMapping(value = "/admin/new", method = RequestMethod.POST)
+//    public void addAdmin() {
+//        loansService.addAdmin();
+//    }
+
+
+
+//    @RequestMapping(value = "/loans/new", method = RequestMethod.POST)
+//    public void tes2() {
+//        loansService.addNewLoan();
+//    }
+
+
+
 
     }
 

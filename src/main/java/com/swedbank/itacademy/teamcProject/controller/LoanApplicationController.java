@@ -33,13 +33,8 @@ public class LoanApplicationController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    @ResponseBody
     public Admin testAdmin1(@Valid @RequestBody Admin admin) {
         admin.setToken("labas");
-        //if(loansService.checkAdmin(admin)) {
-//            admin.setToken("labas");
-         //   return admin;
-        //}
         return admin;
     }
 
@@ -58,7 +53,6 @@ public class LoanApplicationController {
 
 
     @RequestMapping(value = "/loans/all", method = RequestMethod.POST)
-    @ResponseBody
     public void tes3(@Valid @RequestBody Loans loans) {
 
         loans.setStatus("Unverified");
@@ -66,7 +60,6 @@ public class LoanApplicationController {
     }
 
     @RequestMapping(value = "loans/edit", method = RequestMethod.POST)
-    @ResponseBody
     public Loans editLoan(@Valid @RequestBody Loans loans) {
 
         String str1 = "Approved";

@@ -54,7 +54,7 @@ public class LoanService {
 
     public boolean checkAdmin(Admin admin)
     {
-        if(adminRepository.findOne(1) == admin)
+        if(adminRepository.findOne(0) == admin)
         {
             return true;
         }

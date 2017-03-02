@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 /**
@@ -40,6 +43,8 @@ public class LoanApplicationController {
 
     @RequestMapping(value = "/loans/all", method = RequestMethod.POST)
     public void tes3(@Valid @RequestBody Loans loans) {
+
+
 
         loans.setStatus("Unverified");
         loansService.addLoans(loans);

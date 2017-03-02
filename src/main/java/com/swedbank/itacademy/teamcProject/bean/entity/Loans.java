@@ -12,6 +12,9 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by benas on 17.2.24.
@@ -62,10 +65,15 @@ public class Loans {
         this.docnumber = docnumber;
         this.address = address;
         this.doctype = doctype;
+        setDate();
 
     }
 
-
+    private void setDate() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date();
+        this.date = dateFormat.format(date);
+    }
 
     public void setHash()
     {
@@ -83,6 +91,7 @@ public class Loans {
 
 
     public Loans() {
+        setDate();
     }
 
     public Integer getId() {

@@ -87,7 +87,7 @@ public class LoanService {
     }
 
     public Loans getLoanByHash(String hash) {
-        long count = loansRepository.count();
+        long count = 150;
 
         Loans temp;
         for (int i = 0; i < count; i++) {
@@ -99,6 +99,6 @@ public class LoanService {
                 }
             }
             }
-            return new Loans();
+            return null;
         }
     }

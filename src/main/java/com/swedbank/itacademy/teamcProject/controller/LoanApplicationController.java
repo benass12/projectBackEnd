@@ -36,6 +36,7 @@ public class LoanApplicationController {
     @ResponseBody
     public Admin testAdmin1(@Valid @RequestBody Admin admin) {
         if(loansService.checkAdmin(admin)) {
+            admin.setToken("labas");
             return admin;
         }
         return admin;

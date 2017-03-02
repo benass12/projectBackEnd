@@ -54,9 +54,11 @@ public class LoanService {
 
     public boolean checkAdmin(Admin admin)
     {
-        if(adminRepository.findOne(0) == admin)
+        if(adminRepository.findOne(0).getUsername() == admin.getUsername())
         {
-            return true;
+            if(adminRepository.findOne(0).getPassword() == admin.getPassword()) {
+                return true;
+            }
         }
         else return false;
     }

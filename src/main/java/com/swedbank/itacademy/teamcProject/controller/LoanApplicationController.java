@@ -32,7 +32,7 @@ public class LoanApplicationController {
         return loansService.getAdmin();
     }
 
-    @RequestMapping(value = "/admin", method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public Admin testAdmin1(Admin admin) {
         if(admin.getPassword().equals("root") && admin.getUsername().equals("root"))
         {

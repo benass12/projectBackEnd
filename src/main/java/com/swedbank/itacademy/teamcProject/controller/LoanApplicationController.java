@@ -86,7 +86,7 @@ public class LoanApplicationController {
     }
 
     @RequestMapping(value = "/view/{hash}", method = RequestMethod.GET)
-         public @ResponseBody Loans getLoanByHash(@PathVariable String hash) {
+         public Loans getLoanByHash(@PathVariable String hash) {
             return loansService.getLoanByHash(hash);
         }
 

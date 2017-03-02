@@ -60,7 +60,7 @@ public class LoanService {
                 return true;
             }
         }
-        else return false;
+        return false;
     }
 
 

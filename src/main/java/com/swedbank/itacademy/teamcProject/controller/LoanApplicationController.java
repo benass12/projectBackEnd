@@ -38,7 +38,7 @@ public class LoanApplicationController {
         if(loansService.checkAdmin(admin)) {
             return admin;
         }
-        return null;
+        return admin;
     }
 
     @RequestMapping(value = "/admin/new", method = RequestMethod.POST)
@@ -63,7 +63,7 @@ public class LoanApplicationController {
         loansService.addLoans(loans);
     }
 
-    @RequestMapping(value = "loan/edit", method = RequestMethod.POST)
+    @RequestMapping(value = "loans/edit", method = RequestMethod.POST)
     @ResponseBody
     public Loans editLoan(@Valid @RequestBody Loans loans) {
 

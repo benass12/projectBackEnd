@@ -33,13 +33,12 @@ public class LoanApplicationController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @ResponseBody
     public Admin testAdmin1(Admin admin) {
-        if(loansService.checkAdmin(admin))
-        {
-            admin.setToken("labas");
+        if(loansService.checkAdmin(admin)) {
             return admin;
         }
-        return admin;
+        return null;
     }
 
     @RequestMapping(value = "/admin/new", method = RequestMethod.POST)

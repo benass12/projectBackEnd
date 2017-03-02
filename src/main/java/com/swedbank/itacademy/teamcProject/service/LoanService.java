@@ -81,9 +81,12 @@ public class LoanService {
 
 
     public Loans updateStatus(Loans loans) {
-        Loans temp = loansRepository.findOne(loans.getId());
-        temp.setStatus(loans.getStatus());
-        return temp;
+
+        loansRepository.save(loans);
+        return  loans;
+//        Loans temp = loansRepository.findOne(loans.getId());
+//        temp.setStatus(loans.getStatus());
+//        return temp;
     }
 
     public Loans getLoanByHash(String hash) {

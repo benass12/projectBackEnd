@@ -53,18 +53,18 @@ public class LoanApplicationController {
     @RequestMapping(value = "loans/edit", method = RequestMethod.POST)
     public @ResponseBody Loans editLoan(@Valid @RequestBody Loans loans) {
 
-        String str1 = "Approved";
-        String str2 = "Disapproved";
-        String str3 = "Unverified";
-
-        if (loans.getStatus().equals(str1))  {
-            loans.setStatus(str1);
-        } else if (loans.getStatus().equals(str2)) {
-            loans.setStatus(str2);
-
-        } else if (loans.getStatus().equals(str3)) {
-            loans.setStatus(str3);
-        }
+//        String str1 = "Approved";
+//        String str2 = "Disapproved";
+//        String str3 = "Unverified";
+//
+//        if (loans.getStatus().equals(str1))  {
+//            loans.setStatus(str1);
+//        } else if (loans.getStatus().equals(str2)) {
+//            loans.setStatus(str2);
+//
+//        } else if (loans.getStatus().equals(str3)) {
+//            loans.setStatus(str3);
+//        }
         return loansService.updateStatus(loans);
     }
 

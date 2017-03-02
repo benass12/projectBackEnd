@@ -95,7 +95,7 @@ public class LoanService {
             if (loansRepository.exists(i))
             {
                 temp = loansRepository.findOne(i);
-                if(temp.getLoancode().toLowerCase() == hash.toLowerCase()) {
+                if(temp.getLoancode().toLowerCase().equals(hash.toLowerCase())) {
                     return temp;
                 }
             }

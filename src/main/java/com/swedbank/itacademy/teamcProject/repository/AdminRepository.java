@@ -6,5 +6,5 @@ import org.springframework.data.repository.CrudRepository;
 /**
  * Created by benas on 17.2.28.
  */
-public interface AdminRepository extends CrudRepository<Admin, Long> {
+public interface AdminRepository extends CrudRepository<Admin, Integer> {
 }

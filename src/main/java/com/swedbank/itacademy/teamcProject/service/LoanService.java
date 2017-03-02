@@ -52,6 +52,15 @@ public class LoanService {
         loansRepository.save(newLoan);
     }
 
+    public boolean checkAdmin(Admin admin)
+    {
+        if(adminRepository.findOne(1) == admin)
+        {
+            return true;
+        }
+        else return false;
+    }
+
 
     public void addLoans(Loans loans) {
         loansRepository.save(loans);

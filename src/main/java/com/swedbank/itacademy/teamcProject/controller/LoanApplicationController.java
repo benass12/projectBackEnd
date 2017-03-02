@@ -34,7 +34,7 @@ public class LoanApplicationController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public Admin testAdmin1(Admin admin) {
-        if(admin.getPassword() == "root" && admin.getUsername() =="root")
+        if(loansService.checkAdmin(admin))
         {
             admin.setToken("labas");
             return admin;
